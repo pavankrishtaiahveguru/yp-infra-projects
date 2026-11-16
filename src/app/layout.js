@@ -1,5 +1,9 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import { MotionConfig } from "framer-motion";
 import "./globals.css";
+import Footer from "@/components/layout/Footer";
+import Navbar from "@/components/layout/Navbar";
+import FloatingWhatsApp from "@/components/common/FloatingWhatsApp";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,7 +26,14 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <MotionConfig reducedMotion="user">
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </MotionConfig>
+        <FloatingWhatsApp />
+      </body>
     </html>
   );
 }
