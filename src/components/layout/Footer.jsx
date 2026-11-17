@@ -10,7 +10,6 @@ import {
   Phone,
   ArrowRight,
 } from "lucide-react";
-import DevelopedByStaffArc from "../common/DevelopedByStaffArc";
 
 const quickLinks = [
   { name: "Home", href: "/" },
