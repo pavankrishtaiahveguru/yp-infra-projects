@@ -2,17 +2,60 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import {
-  ArrowLeft,
-  ArrowRight,
-  MapPin,
-  Phone,
-  Mail,
-  Clock3,
-  Send,
-} from "lucide-react";
+import { ArrowLeft, ArrowRight, MapPin, Phone, Mail, Send } from "lucide-react";
 
 export default function ContactPage() {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+
+    const name = formData.get("name")?.toString().trim();
+    const phone = formData.get("phone")?.toString().trim();
+    const email = formData.get("email")?.toString().trim();
+    const service = formData.get("service")?.toString().trim();
+    const message = formData.get("message")?.toString().trim();
+
+    if (!name || !phone || !service || !message) {
+      window.alert("Please fill in all required fields.");
+      return;
+    }
+
+    const serviceName = service
+      .split("-")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+
+    const whatsappMessage = `
+Hello Yesupadam Infra Projects,
+
+I would like to discuss a project with your team.
+
+*Customer Details*
+Name: ${name}
+Contact Number: ${phone}
+Email: ${email || "Not provided"}
+
+*Service Required*
+${serviceName}
+
+*Project Details*
+${message}
+
+Please contact me regarding my project requirements.
+
+Thank you.
+    `.trim();
+
+    const whatsappNumber = "918978814567";
+
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+      whatsappMessage,
+    )}`;
+
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <main className="min-h-[100dvh] overflow-hidden bg-[#F8FAFC]">
       {/* Background */}
@@ -200,7 +243,10 @@ export default function ContactPage() {
               </div>
 
               {/* Form */}
-              <form className="relative mt-10 space-y-7">
+              <form
+                onSubmit={handleSubmit}
+                className="relative mt-10 space-y-7"
+              >
                 {/* Name + Phone */}
                 <div className="grid gap-7 sm:grid-cols-2">
                   <div>
@@ -215,6 +261,7 @@ export default function ContactPage() {
                       id="name"
                       name="name"
                       type="text"
+                      required
                       placeholder="Enter your name"
                       className="mt-3 w-full border-0 border-b border-slate-200 bg-transparent px-0 pb-3 text-sm text-[#0F172A] outline-none transition-colors placeholder:text-slate-300 focus:border-[#0182DE]"
                     />
@@ -232,6 +279,7 @@ export default function ContactPage() {
                       id="phone"
                       name="phone"
                       type="tel"
+                      required
                       placeholder="+91 XXXXX XXXXX"
                       className="mt-3 w-full border-0 border-b border-slate-200 bg-transparent px-0 pb-3 text-sm text-[#0F172A] outline-none transition-colors placeholder:text-slate-300 focus:border-[#0182DE]"
                     />
@@ -269,6 +317,7 @@ export default function ContactPage() {
                     id="service"
                     name="service"
                     defaultValue=""
+                    required
                     className="mt-3 w-full cursor-pointer border-0 border-b border-slate-200 bg-transparent px-0 pb-3 text-sm text-[#0F172A] outline-none transition-colors focus:border-[#0182DE]"
                   >
                     <option value="" disabled>
@@ -299,6 +348,7 @@ export default function ContactPage() {
                     id="message"
                     name="message"
                     rows={4}
+                    required
                     placeholder="Tell us about your project requirements..."
                     className="mt-3 w-full resize-none border-0 border-b border-slate-200 bg-transparent px-0 pb-3 text-sm leading-6 text-[#0F172A] outline-none transition-colors placeholder:text-slate-300 focus:border-[#0182DE]"
                   />
@@ -314,8 +364,7 @@ export default function ContactPage() {
                 </button>
 
                 <p className="text-center text-[10px] leading-5 text-slate-400">
-                  We&apos;ll review your requirements and get back to you as
-                  soon as possible.
+                  Your inquiry will open WhatsApp with your project details.
                 </p>
               </form>
             </div>
