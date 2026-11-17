@@ -37,11 +37,7 @@ export default function Navbar() {
         >
           <span className="flex flex-col leading-none">
             <span className="text-2xl font-extrabold tracking-tight text-[#012F7B] sm:text-3xl lg:text-[2rem]">
-              Yesupadam
-            </span>
-
-            <span className="mt-1 text-sm font-bold tracking-wide text-[#0182DE] sm:text-base lg:text-lg">
-              Infra Projects
+              Yesupadam Infra Projects
             </span>
           </span>
         </Link>
