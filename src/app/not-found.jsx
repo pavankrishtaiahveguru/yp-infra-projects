@@ -6,7 +6,7 @@ import { ArrowLeft, ArrowRight, Building2, Home } from "lucide-react";
 
 export default function NotFound() {
   return (
-    <main className="relative flex min-h-[calc(100vh-80px)] items-center justify-center overflow-hidden bg-[#F8FAFC] px-4 py-16 sm:px-6 lg:px-8">
+    <main className="relative flex min-h-[calc(100dvh-5rem)] items-center justify-center overflow-hidden bg-[#F8FAFC] px-4 py-16 sm:px-6 lg:px-8">
       {/* Background Decorations */}
       <div className="pointer-events-none absolute -left-32 -top-32 h-80 w-80 rounded-full bg-[#0182DE]/10 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-40 -right-32 h-96 w-96 rounded-full bg-[#F6BB03]/10 blur-3xl" />
@@ -51,8 +51,8 @@ export default function NotFound() {
           </h2>
 
           <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-slate-500 sm:text-base">
-            The page you're looking for doesn't exist or may have been moved.
-            Let's get you back to the Yesupadam Infra Projects website.
+            The page you&apos;re looking for doesn&apos;t exist or may have been moved.
+            Let&apos;s get you back to the Yesupadam Infra Projects website.
           </p>
         </motion.div>
 

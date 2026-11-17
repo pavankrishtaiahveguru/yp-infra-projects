@@ -64,8 +64,8 @@ export default function Footer() {
                 src="/logo/yp-logo.png"
                 alt="Yesupadam Infra Projects"
                 width={180}
-                height={70}
-                className="h-auto w-[165px] object-contain brightness-0 invert"
+                height={120}
+                className="h-16 w-auto object-contain brightness-0 invert"
               />
             </Link>
 

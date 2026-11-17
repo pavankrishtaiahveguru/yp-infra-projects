@@ -53,7 +53,7 @@ export default function AboutPage() {
   return (
     <main className="overflow-hidden bg-white">
       {/* Hero */}
-      <section className="relative isolate flex min-h-[75svh] items-center overflow-hidden bg-[#012F7B] md:min-h-[70svh] lg:min-h-[80svh]">
+      <section className="relative isolate flex min-h-[calc(100dvh-5rem)] items-center overflow-hidden bg-[#012F7B]">
         <Image
           src="/images/about-infra.jpg"
           alt="Infrastructure and civil construction project"
@@ -140,13 +140,13 @@ export default function AboutPage() {
               transition={{ duration: 0.7 }}
               className="relative"
             >
-              <div className="relative overflow-hidden rounded-[2rem]">
+              <div className="relative h-[520px] overflow-hidden rounded-[2rem] sm:h-[620px]">
                 <Image
                   src="/images/about-infra.jpg"
                   alt="Yesupadam Infra Projects construction work"
-                  width={900}
-                  height={1100}
-                  className="h-[520px] w-full object-cover sm:h-[620px]"
+                  fill
+                  sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 1023px) calc(100vw - 3rem), (max-width: 1279px) calc(45vw - 4.05rem), 32rem"
+                  className="object-cover"
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-[#012F7B]/70 via-transparent to-transparent" />
@@ -224,7 +224,7 @@ export default function AboutPage() {
                 <p>
                   We believe successful projects are built through quality
                   workmanship, reliable service, professional execution, and a
-                  strong commitment to every client's requirements.
+                  strong commitment to every client&apos;s requirements.
                 </p>
               </div>
 
@@ -351,7 +351,7 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
           >
             <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#F6BB03]">
-              Let's Build Together
+              Let&apos;s Build Together
             </p>
 
             <h2 className="mt-3 text-3xl font-extrabold text-[#0F172A] sm:text-4xl lg:text-5xl">

@@ -6,7 +6,7 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[calc(100vh-80px)] overflow-hidden">
+    <section className="relative min-h-[calc(100dvh-5rem)] overflow-hidden">
       {/* Full Background Video */}
       <div className="absolute inset-0">
         <video
@@ -31,7 +31,7 @@ export default function Hero() {
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-80px)] max-w-7xl items-center px-4 py-20 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto flex min-h-[calc(100dvh-5rem)] max-w-7xl items-center px-4 py-20 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 35 }}
           animate={{ opacity: 1, y: 0 }}

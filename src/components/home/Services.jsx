@@ -108,7 +108,7 @@ export default function Services() {
                   alt={service.title}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 1023px) calc(50vw - 2.125rem), (max-width: 1279px) calc(25vw - 1.9375rem), 18.0625rem"
                 />
 
                 {/* Image Overlay */}
@@ -161,7 +161,7 @@ export default function Services() {
               Have a project in mind?
             </p>
             <p className="mt-1 text-sm text-slate-500">
-              Let's discuss how we can help.
+              Let&apos;s discuss how we can help.
             </p>
           </div>
 

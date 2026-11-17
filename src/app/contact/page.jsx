@@ -14,7 +14,7 @@ import {
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#F8FAFC]">
+    <main className="min-h-[100dvh] overflow-hidden bg-[#F8FAFC]">
       {/* Background */}
       <div className="pointer-events-none fixed inset-0">
         <div className="absolute -right-40 -top-40 h-[500px] w-[500px] rounded-full bg-[#0182DE]/5 blur-3xl" />
@@ -166,23 +166,6 @@ export default function ContactPage() {
                   Send Email
                   <ArrowRight className="h-3 w-3" />
                 </a>
-              </div>
-
-              {/* Working Hours */}
-              <div>
-                <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-full border border-[#F6BB03]/40 text-[#C99D20]">
-                  <Clock3 className="h-4 w-4" />
-                </div>
-
-                <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-slate-400">
-                  Working Hours
-                </p>
-
-                <p className="mt-2 text-sm font-semibold leading-6 text-[#0F172A]">
-                  Monday – Saturday
-                  <br />
-                  9:00 AM – 6:00 PM
-                </p>
               </div>
             </div>
           </motion.section>

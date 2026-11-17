@@ -126,12 +126,13 @@ export default function ServicesPage() {
   return (
     <main className="overflow-hidden bg-white">
       {/* Page Hero */}
-      <section className="relative isolate flex min-h-[700px] items-center overflow-hidden bg-[#012F7B] sm:min-h-[620px] lg:min-h-[660px]">
+      <section className="relative isolate flex min-h-[calc(100dvh-5rem)] items-center overflow-hidden bg-[#012F7B]">
         <Image
           src="/images/services/road-works.jpg"
           alt="Road construction and infrastructure works"
           fill
           priority
+          loading="eager"
           sizes="100vw"
           className="object-cover object-[58%_center]"
         />
@@ -239,13 +240,13 @@ export default function ServicesPage() {
                     <div className="relative">
                       <div className="absolute -bottom-4 -left-4 h-24 w-24 rounded-2xl bg-[#F6BB03]/10 sm:-bottom-6 sm:-left-6 sm:h-32 sm:w-32" />
 
-                      <div className="relative overflow-hidden rounded-[1.5rem] bg-slate-100 shadow-xl sm:rounded-[2rem]">
+                      <div className="relative h-[320px] overflow-hidden rounded-[1.5rem] bg-slate-100 shadow-xl sm:h-[400px] md:h-[440px] lg:h-[500px] sm:rounded-[2rem]">
                         <Image
                           src={service.image}
                           alt={service.title}
-                          width={1000}
-                          height={700}
-                          className="h-[320px] w-full object-cover transition-transform duration-700 group-hover:scale-105 sm:h-[400px] md:h-[440px] lg:h-[500px]"
+                          fill
+                          sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 767px) calc(100vw - 3rem), (max-width: 1023px) calc(50vw - 3rem), (max-width: 1279px) calc(50vw - 4.5rem), 35.5rem"
+                          className="object-cover transition-transform duration-700 group-hover:scale-105"
                         />
 
                         <div className="absolute inset-0 bg-gradient-to-t from-[#012F7B]/60 via-transparent to-transparent opacity-70" />

@@ -82,6 +82,7 @@ export default function About() {
                 src="/images/about-infra.jpg"
                 alt="Yesupadam Infra Projects construction work"
                 fill
+                sizes="(max-width: 639px) calc(100vw - 2rem), 470px"
                 className="object-cover transition-transform duration-700 hover:scale-105"
               />
             </div>

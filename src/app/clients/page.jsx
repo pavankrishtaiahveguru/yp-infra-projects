@@ -14,28 +14,28 @@ import {
 
 const clients = [
   {
-    name: "Residential Clients",
-    description:
-      "Trusted by homeowners for dependable construction, civil works, maintenance, and renovation solutions.",
-    image: "/images/residential-client.jpg",
+    name: "Wipro",
+    logo: "/images/clients/wipro.webp",
   },
   {
-    name: "Corporate Clients",
-    description:
-      "Supporting businesses with professional infrastructure, commercial construction, and facility solutions.",
-    image: "/images/corporate-client.jpg",
+    name: "ISB",
+    logo: "/images/clients/isb.webp",
   },
   {
-    name: "Industrial Projects",
-    description:
-      "Delivering reliable civil and infrastructure works for demanding industrial environments.",
-    image: "/images/industrial-client.jpg",
+    name: "LTI Mindtree",
+    logo: "/images/clients/lti-mindtree.webp",
   },
   {
-    name: "Institutional Projects",
-    description:
-      "Providing quality construction and maintenance services for institutional and organizational requirements.",
-    image: "/images/institutional-client.jpg",
+    name: "Franklin Templeton",
+    logo: "/images/clients/franklin-templeton.webp",
+  },
+  {
+    name: "Netlec",
+    logo: "/images/clients/netlec.webp",
+  },
+  {
+    name: "Bluspring",
+    logo: "/images/clients/bluspring.webp",
   },
 ];
 
@@ -64,19 +64,20 @@ export default function ClientsPage() {
   return (
     <main className="overflow-hidden bg-white">
       {/* Hero */}
-      <section className="relative min-h-[72vh] overflow-hidden bg-[#012F7B]">
+      <section className="relative min-h-[calc(100dvh-5rem)] overflow-hidden bg-[#012F7B]">
         <Image
           src="/images/clients-hero.jpg"
           alt="Yesupadam Infra Projects client projects"
           fill
           priority
+          sizes="100vw"
           className="object-cover"
         />
 
         <div className="absolute inset-0 bg-[#012F7B]/75" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#012F7B]/35 via-[#012F7B]/15 to-[#012F7B]/25" />
 
-        <div className="relative mx-auto flex min-h-[72vh] max-w-7xl items-center px-4 py-20 sm:px-6 lg:px-8">
+        <div className="relative mx-auto flex min-h-[calc(100dvh-5rem)] max-w-7xl items-center px-4 py-20 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 35 }}
             animate={{ opacity: 1, y: 0 }}
@@ -144,6 +145,7 @@ export default function ClientsPage() {
                   src="/images/client-meeting.jpg"
                   alt="Yesupadam Infra Projects client meeting"
                   fill
+                  sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 1023px) calc(100vw - 3rem), (max-width: 1279px) calc(45vw - 4.05rem), 32rem"
                   className="object-cover transition-transform duration-700 hover:scale-105"
                 />
 
@@ -191,10 +193,10 @@ export default function ClientsPage() {
               </div>
 
               <p className="mt-6 text-base leading-8 text-slate-600 sm:text-lg">
-                Every successful project starts with understanding the client's
-                requirements. At Yesupadam Infra Projects, we work closely with
-                our clients to understand their goals, plan effectively, and
-                deliver dependable results.
+                Every successful project starts with understanding the
+                client&apos;s requirements. At Yesupadam Infra Projects, we work
+                closely with our clients to understand their goals, plan
+                effectively, and deliver dependable results.
               </p>
 
               <p className="mt-4 text-base leading-8 text-slate-600">
@@ -224,7 +226,7 @@ export default function ClientsPage() {
         </div>
       </section>
 
-      {/* Client Categories */}
+      {/* Actual Clients */}
       <section className="bg-white py-20 sm:py-24 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -232,70 +234,58 @@ export default function ClientsPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="max-w-3xl"
+            className="mx-auto max-w-3xl text-center"
           >
             <span className="inline-flex items-center gap-2 rounded-full border border-[#012F7B]/10 bg-[#F8FAFC] px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#012F7B]">
               <span className="h-2 w-2 rounded-full bg-[#F6BB03]" />
-              Who We Serve
+              Our Clients
             </span>
 
             <h2 className="mt-6 text-4xl font-extrabold leading-tight tracking-tight text-[#0F172A] sm:text-5xl">
-              Solutions for Every
-              <span className="text-[#0182DE]"> Project.</span>
+              Trusted by Leading
+              <span className="text-[#0182DE]"> Organizations.</span>
             </h2>
 
-            <div className="mt-6 flex items-center gap-2">
+            <div className="mt-6 flex items-center justify-center gap-2">
               <span className="h-1 w-16 rounded-full bg-[#F6BB03]" />
               <span className="h-1 w-5 rounded-full bg-[#0182DE]" />
             </div>
 
             <p className="mt-6 text-base leading-8 text-slate-600 sm:text-lg">
-              We provide infrastructure, construction, and maintenance solutions
-              across a wide range of project environments.
+              We are proud to work with reputed organizations across corporate,
+              institutional, industrial, and infrastructure projects.
             </p>
           </motion.div>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {clients.map((client, index) => (
               <motion.article
                 key={client.name}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+                transition={{ duration: 0.6, delay: index * 0.08 }}
+                className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#0182DE]/30 hover:shadow-xl sm:p-8"
               >
-                <div className="relative aspect-[4/3] overflow-hidden bg-slate-100">
+                <div className="relative flex h-32 w-full items-center justify-center rounded-xl bg-[#F8FAFC] px-6">
                   <Image
-                    src={client.image}
-                    alt={client.name}
+                    src={client.logo}
+                    alt={`${client.name} logo`}
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 639px) calc(100vw - 5rem), (max-width: 1023px) calc(50vw - 4rem), 340px"
+                    className="object-contain p-6 transition-transform duration-500 group-hover:scale-105"
                   />
-
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#012F7B]/70 via-transparent to-transparent" />
                 </div>
 
-                <div className="p-6">
-                  <span className="text-xs font-bold uppercase tracking-[0.15em] text-[#0182DE]">
-                    0{index + 1}
-                  </span>
-
-                  <h3 className="mt-2 text-xl font-bold text-[#0F172A]">
+                <div className="mt-6 text-center">
+                  <h3 className="text-lg font-bold text-[#0F172A]">
                     {client.name}
                   </h3>
 
-                  <p className="mt-3 text-sm leading-6 text-slate-600">
-                    {client.description}
-                  </p>
-
-                  <Link
-                    href="/contact"
-                    className="group/link mt-5 inline-flex cursor-pointer items-center gap-2 text-sm font-bold text-[#012F7B]"
-                  >
-                    Discuss Your Project
-                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/link:translate-x-1" />
-                  </Link>
+                  <div className="mx-auto mt-3 flex items-center justify-center gap-2">
+                    <span className="h-1 w-8 rounded-full bg-[#F6BB03]" />
+                    <span className="h-1 w-3 rounded-full bg-[#0182DE]" />
+                  </div>
                 </div>
               </motion.article>
             ))}
@@ -360,8 +350,8 @@ export default function ClientsPage() {
             </h2>
 
             <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-blue-100/80">
-              Let's discuss your requirements and build a solution that meets
-              your project goals.
+              Let&apos;s discuss your requirements and build a solution that
+              meets your project goals.
             </p>
 
             <Link

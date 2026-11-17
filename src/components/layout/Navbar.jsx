@@ -32,7 +32,8 @@ export default function Navbar() {
         {/* Logo */}
         <Link
           href="/"
-          className="flex h-16 w-[145px] items-center sm:w-[165px] lg:w-[180px]"
+          aria-label="Yesupadam Infra Projects"
+          className="flex h-16 shrink-0 items-center gap-2 sm:gap-3"
           onClick={handleLogoClick}
         >
           <Image
@@ -41,8 +42,16 @@ export default function Navbar() {
             width={180}
             height={120}
             priority
-            className="h-full w-full object-contain"
+            className="h-full w-auto object-contain"
           />
+          <span className="flex flex-col leading-tight">
+            <span className="text-base font-bold leading-tight text-[#012F7B] sm:text-xl lg:text-2xl">
+              Yesupadam
+            </span>
+            <span className="text-sm font-semibold leading-tight text-[#0151AD] sm:text-lg lg:text-xl">
+              Infra Projects
+            </span>
+          </span>
         </Link>
 
         {/* Desktop Navigation */}
