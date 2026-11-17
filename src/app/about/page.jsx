@@ -49,6 +49,21 @@ const clients = [
   "Bluspring",
 ];
 
+const leadership = [
+  {
+    name: "KUDARI YESUPADAM",
+    role: "Proprietor",
+    description:
+      "Leading Yesupadam Infra Projects with a strong focus on quality, reliability, and dependable project execution.",
+  },
+  {
+    name: "Kudari Ratna Kishore",
+    role: "Executive Director",
+    description:
+      "Supporting the organization's growth through professional project coordination, client relationships, and effective execution.",
+  },
+];
+
 export default function AboutPage() {
   return (
     <main className="overflow-hidden bg-white">
@@ -62,6 +77,7 @@ export default function AboutPage() {
           sizes="100vw"
           className="object-cover object-center"
         />
+
         <div className="absolute inset-0 bg-[#012F7B]/30" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#012F7B]/90 via-[#012F7B]/60 to-[#012F7B]/20" />
 
@@ -85,11 +101,9 @@ export default function AboutPage() {
               transition={{ duration: 0.5, delay: 0.08, ease: "easeOut" }}
               className="text-4xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
             >
-              Building with{" "}
-              <span className="text-sky-300">Experience.</span>
+              Building with <span className="text-sky-300">Experience.</span>
               <br />
-              Delivering with{" "}
-              <span className="text-[#F6BB03]">Trust.</span>
+              Delivering with <span className="text-[#F6BB03]">Trust.</span>
             </motion.h1>
 
             <motion.p
@@ -116,6 +130,7 @@ export default function AboutPage() {
                 Our Services
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
+
               <Link
                 href="/contact"
                 className="group inline-flex cursor-pointer items-center justify-center gap-2 rounded-full border border-white/60 bg-white/10 px-6 py-3.5 text-sm font-bold text-white backdrop-blur-sm transition-colors hover:bg-white/20"
@@ -181,6 +196,7 @@ export default function AboutPage() {
                     <p className="text-2xl font-extrabold leading-none text-[#012F7B]">
                       15+
                     </p>
+
                     <p className="mt-1 text-xs font-medium text-slate-500">
                       Years of Experience
                     </p>
@@ -240,8 +256,78 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Leadership */}
+      <section className="bg-[#F8FAFC] py-20 sm:py-24 lg:py-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mx-auto max-w-3xl text-center"
+          >
+            <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#F6BB03]">
+              Our Leadership
+            </p>
+
+            <h2 className="mt-3 text-3xl font-extrabold text-[#0F172A] sm:text-4xl lg:text-5xl">
+              Leadership Behind
+              <span className="text-[#012F7B]"> Our Vision.</span>
+            </h2>
+
+            <div className="mt-5 flex items-center justify-center gap-2">
+              <span className="h-1 w-14 rounded-full bg-[#F6BB03]" />
+              <span className="h-1 w-5 rounded-full bg-[#0182DE]" />
+            </div>
+
+            <p className="mt-5 text-base leading-7 text-slate-600 sm:text-lg">
+              Guided by experienced leadership with a commitment to quality,
+              reliability, and long-term client relationships.
+            </p>
+          </motion.div>
+
+          <div className="mx-auto mt-12 grid max-w-4xl gap-6 md:grid-cols-2">
+            {leadership.map((person, index) => (
+              <motion.div
+                key={person.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#0182DE]/30 hover:shadow-xl sm:p-8"
+              >
+                <div className="absolute right-0 top-0 h-24 w-24 rounded-bl-full bg-[#012F7B]/5 transition-colors duration-300 group-hover:bg-[#0182DE]/10" />
+
+                <div className="relative">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#012F7B]/10">
+                    <Users className="h-7 w-7 text-[#012F7B]" />
+                  </div>
+
+                  <p className="mt-6 text-xs font-bold uppercase tracking-[0.2em] text-[#F6BB03]">
+                    {person.role}
+                  </p>
+
+                  <h3 className="mt-2 text-2xl font-extrabold text-[#0F172A] sm:text-3xl">
+                    {person.name}
+                  </h3>
+
+                  <div className="mt-4 flex items-center gap-2">
+                    <span className="h-1 w-10 rounded-full bg-[#F6BB03]" />
+                    <span className="h-1 w-4 rounded-full bg-[#0182DE]" />
+                  </div>
+
+                  <p className="mt-5 text-sm leading-7 text-slate-600">
+                    {person.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Highlights */}
-      <section className="bg-[#F8FAFC] py-20 sm:py-24">
+      <section className="bg-white py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 25 }}

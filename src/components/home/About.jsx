@@ -38,6 +38,17 @@ const features = [
   },
 ];
 
+const leadership = [
+  {
+    role: "Proprietor",
+    name: "KUDARI YESUPADAM",
+  },
+  {
+    role: "Executive Director",
+    name: "Kudari Ratna Kishore",
+  },
+];
+
 export default function About() {
   return (
     <section className="relative overflow-hidden bg-white py-20 sm:py-24 lg:py-28">
@@ -117,6 +128,27 @@ export default function About() {
               maintenance and infrastructure services with a strong focus on
               quality, reliability and practical execution.
             </p>
+
+            {/* Leadership */}
+            <div className="mt-8 grid gap-5 border-y border-slate-200 py-6 sm:grid-cols-2">
+              {leadership.map((person, index) => (
+                <motion.div
+                  key={person.role}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#C9A84E] sm:text-xs">
+                    {person.role}
+                  </p>
+
+                  <p className="mt-2 text-base font-bold text-[#012F7B] sm:text-lg">
+                    {person.name}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
 
             {/* Gold Line */}
             <div className="mt-8 h-[2px] w-20 bg-[#C9A84E]" />

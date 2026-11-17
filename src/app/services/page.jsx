@@ -18,6 +18,19 @@ import {
 const services = [
   {
     number: "01",
+    title: "IT Facility Maintenance Works",
+    image: "/images/services/maintenance-works.jpg",
+    icon: Settings,
+    description:
+      "Comprehensive building and facility maintenance services helping residential and corporate properties remain functional and reliable.",
+    points: [
+      "Building maintenance",
+      "Corporate facility maintenance",
+      "Repair and preventive maintenance",
+    ],
+  },
+  {
+    number: "02",
     title: "Road Works",
     image: "/images/services/road-works.jpg",
     icon: Construction,
@@ -30,7 +43,7 @@ const services = [
     ],
   },
   {
-    number: "02",
+    number: "03",
     title: "Civil Works",
     image: "/images/services/civil-works.jpg",
     icon: Hammer,
@@ -43,7 +56,7 @@ const services = [
     ],
   },
   {
-    number: "03",
+    number: "04",
     title: "Electrical Works",
     image: "/images/services/electrical-works.jpg",
     icon: Zap,
@@ -56,7 +69,7 @@ const services = [
     ],
   },
   {
-    number: "04",
+    number: "05",
     title: "Plumbing Works",
     image: "/images/services/plumbing-works.jpg",
     icon: Droplets,
@@ -69,7 +82,7 @@ const services = [
     ],
   },
   {
-    number: "05",
+    number: "06",
     title: "HVAC Works",
     image: "/images/services/hvac-works.jpg",
     icon: Settings,
@@ -82,7 +95,7 @@ const services = [
     ],
   },
   {
-    number: "06",
+    number: "07",
     title: "Painting Works",
     image: "/images/services/painting-works.jpg",
     icon: Paintbrush,
@@ -95,7 +108,7 @@ const services = [
     ],
   },
   {
-    number: "07",
+    number: "08",
     title: "Drain Line Works",
     image: "/images/services/drain-line-works.jpg",
     icon: Wrench,
@@ -105,19 +118,6 @@ const services = [
       "Drain line installation",
       "Pipeline and drainage works",
       "Repair and maintenance",
-    ],
-  },
-  {
-    number: "08",
-    title: "Maintenance Works",
-    image: "/images/services/maintenance-works.jpg",
-    icon: Settings,
-    description:
-      "Comprehensive building and facility maintenance services helping residential and corporate properties remain functional and reliable.",
-    points: [
-      "Building maintenance",
-      "Corporate facility maintenance",
-      "Repair and preventive maintenance",
     ],
   },
 ];
@@ -159,8 +159,7 @@ export default function ServicesPage() {
               transition={{ duration: 0.5, delay: 0.08, ease: "easeOut" }}
               className="text-4xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
             >
-              Complete{" "}
-              <span className="text-[#F6BB03]">Infrastructure</span>{" "}
+              Complete <span className="text-[#F6BB03]">Infrastructure</span>{" "}
               <span className="text-white">Solutions.</span>
             </motion.h1>
 
@@ -198,17 +197,19 @@ export default function ServicesPage() {
             </motion.div>
 
             <div className="mt-7 flex flex-wrap gap-x-6 gap-y-3">
-              {["Quality Work", "Reliable Service", "Professional Execution"].map(
-                (highlight) => (
-                  <span
-                    key={highlight}
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-white/95"
-                  >
-                    <CheckCircle2 className="h-4 w-4 shrink-0 text-[#F6BB03]" />
-                    {highlight}
-                  </span>
-                ),
-              )}
+              {[
+                "Quality Work",
+                "Reliable Service",
+                "Professional Execution",
+              ].map((highlight) => (
+                <span
+                  key={highlight}
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-white/95"
+                >
+                  <CheckCircle2 className="h-4 w-4 shrink-0 text-[#F6BB03]" />
+                  {highlight}
+                </span>
+              ))}
             </div>
           </div>
         </div>
