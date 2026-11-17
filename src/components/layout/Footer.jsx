@@ -237,7 +237,6 @@ export default function Footer() {
             reserved.
           </p>
 
-          <DevelopedByStaffArc />
 
           <div className="flex items-center gap-5">
             {/* Back to Top */}
