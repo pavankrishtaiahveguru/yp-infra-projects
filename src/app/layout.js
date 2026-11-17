@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
+ 
 export const metadata = {
   title: {
     default: "Yesupadam Infra Projects",
@@ -39,7 +39,7 @@ export const metadata = {
   authors: [{ name: "Yesupadam Infra Projects" }],
   creator: "Yesupadam Infra Projects",
   publisher: "Yesupadam Infra Projects",
-  metadataBase: new URL("https://yp-infra-projects.vercel.app"),
+  metadataBase: new URL("https://yesupadaminfradevelop.com"),
   openGraph: {
     title: "Yesupadam Infra Projects",
     description:

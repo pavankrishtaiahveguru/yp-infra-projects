@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { useState } from "react";
@@ -33,12 +34,23 @@ export default function Navbar() {
           href="/"
           aria-label="Yesupadam Infra Projects"
           onClick={handleBrandClick}
-          className="flex cursor-pointer items-center"
+          className="flex cursor-pointer items-center gap-3"
         >
+          <Image
+            src="/logo/yp-logo.png"
+            alt="Yesupadam Infra Projects logo"
+            width={58}
+            height={58}
+            priority
+            className="h-18 w-18 object-contain"
+          />
+
           <span className="flex flex-col leading-none">
-            <span className="text-2xl font-extrabold tracking-tight text-[#012F7B] sm:text-3xl lg:text-[2rem]">
+            <span className="text-lg font-extrabold tracking-tight text-[#012F7B] sm:text-3xl lg:text-[2rem]">
               Yesupadam Infra Projects
             </span>
+
+            
           </span>
         </Link>
 
@@ -106,7 +118,6 @@ export default function Navbar() {
                       className="flex cursor-pointer items-center justify-between border-b border-slate-100 py-4 text-base font-semibold text-slate-700 transition-colors duration-300 hover:text-[#0151AD]"
                     >
                       <span>{link.name}</span>
-
                       <ArrowRight className="h-4 w-4 text-[#F6BB03]" />
                     </Link>
                   </motion.div>
